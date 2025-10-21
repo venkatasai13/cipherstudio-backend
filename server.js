@@ -11,25 +11,16 @@ app.use(bodyParser.json());
 // MongoDB URI
 const MONGO_URI = process.env.MONGO_URI;
 
-// Connect to MongoDB
-// Connect to MongoDB
+// ✅ Connect to MongoDB (cleaned version)
 async function connectDB() {
-  try {
-    await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 5000, // optional timeout
-      tls: true,                       // required for Atlas
-      tlsAllowInvalidCertificates: false // recommended for production
+  await mongoose.connect(MONGO_URI)
+    .then(() => console.log("✅ MongoDB Connected Successfully"))
+    .catch(err => {
+      console.error("❌ MongoDB Connection Error:", err);
+      process.exit(1); // Stop the server if DB fails
     });
-    console.log("✅ MongoDB Connected Successfully");
-  } catch (err) {
-    console.error("❌ MongoDB Connection Error:", err);
-    process.exit(1); // Stop server if DB connection fails
-  }
 }
 connectDB();
-
 
 // Define Project Schema
 const projectSchema = new mongoose.Schema({

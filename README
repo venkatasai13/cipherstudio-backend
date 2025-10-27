@@ -1,0 +1,39 @@
+# CipherSchools Backend
+
+## Project Overview
+This is the **backend** for the CipherSchools full-stack assignment project.  
+It is built using **Node.js** and **Express.js**, and provides RESTful APIs that communicate with the React.js frontend (`cipherstudio-frontend`).  
+
+The backend handles data processing, API endpoints, and integration with the database.
+
+## Tech Stack
+- **Node.js**
+- **Express.js**
+- **MongoDB / Mongoose**
+- **dotenv** (for environment variables)
+- **CORS**
+- **nodemon** (for local development)
+
+## Features
+- RESTful API endpoints
+- CORS enabled for frontend connection
+- JSON request handling
+- Environment variable configuration
+- Proper error handling and responses
+- Connected with frontend for API integration
+
+---
+
+##  Folder Structure
+cipherstudio-backend/
+│
+├── server.js
+├── package.json
+├── .env
+├── /routes
+├── /controllers
+├── /models
+└── /config
+
+##  API Overview
+Some common API routes may inclu
